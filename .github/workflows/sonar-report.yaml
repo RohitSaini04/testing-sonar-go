@@ -1,0 +1,32 @@
+---
+# yamllint disable rule:line-length
+name: Actions Gos
+on: 
+  workflow_dispatch:
+jobs:
+  sonar:
+    steps:
+      - uses: actions/setup-go@v5
+
+    - name: Install Application Go Packages
+      shell: bash
+      run: |
+        echo "::group::Install Go Packages"
+        go mod tidy
+        echo "::endgroup::"
+
+    - name: Test with go and collect coverage result
+      shell: bash
+      run: |
+        echo "::group::Test with go and collect coverage result"
+        go test ./... -coverprofile=coverage.out
+        echo "::endgroup::"
+
+    - name: SonarCloud Scan
+      uses: sonarsource/sonarcloud-github-action@master
+      with:
+        args: >
+          -Dsonar.projectKey=dx-demo-go-api
+          -Dsonar.go.coverage.reportPaths=coverage.out
+          -Dsonar.sources='.'
+
