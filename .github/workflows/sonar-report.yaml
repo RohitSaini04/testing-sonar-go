@@ -2,11 +2,15 @@
 # yamllint disable rule:line-length
 name: Actions Gos
 on: 
+  push:
+    branches:
+     - main
   workflow_dispatch:
 jobs:
   sonar:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
 
       - name: Install Application Go Packages
