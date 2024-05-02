@@ -26,6 +26,9 @@ jobs:
           echo "::group::Test with go and collect coverage result"
           go test ./... -coverprofile=coverage.out
           echo "::endgroup::"
+      
+      - shell: bash
+        run: cat coverage.out
 
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
