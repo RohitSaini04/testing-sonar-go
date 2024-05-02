@@ -1,0 +1,6 @@
+projectKey=test_go
+serverUrl=http://localhost:9000
+serverVersion=9.9.4.87374
+dashboardUrl=http://localhost:9000/dashboard?id=test_go
+ceTaskId=AY84hj8UkVgulozXCy5d
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AY84hj8UkVgulozXCy5d

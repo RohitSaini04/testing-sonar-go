@@ -1,0 +1,5 @@
+mode: set
+dx-demo-go-api/app/main.go:5.13,7.2 1 0
+dx-demo-go-api/app/api/api.go:14.80,16.2 1 0
+dx-demo-go-api/app/api/api.go:19.52,25.2 5 0
+dx-demo-go-api/app/api/api.go:27.18,34.2 5 0
