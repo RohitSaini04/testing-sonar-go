@@ -33,7 +33,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.projectKey=dx-demo-go-api
+            -Dsonar.projectKey=variant-inc_dx-demo-go-api
             -Dsonar.go.coverage.reportPaths=coverage.out
-            -Dsonar.sources='.'
+            -Dsonar.organization=variant
 
