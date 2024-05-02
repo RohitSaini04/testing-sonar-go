@@ -28,7 +28,9 @@ jobs:
           echo "::endgroup::"
       
       - shell: bash
-        run: cat coverage.out
+        run: |
+          echo "::add-mask::variant_inc"
+          cat coverage.out
 
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
