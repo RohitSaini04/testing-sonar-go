@@ -1,9 +1,8 @@
-package main
+package api
 
 import (
 	"fmt"
 	"log"
-	"mage-runner/handle"
 	"net/http"
 
 	"github.com/julienschmidt/httprouter"
@@ -25,16 +24,10 @@ func Index(w http.ResponseWriter, _ *http.Request) {
 	fmt.Fprintf(w, "Successfully performed HTTP request\n")
 }
 
-// func Sum(a int, b int) int {
-// 	return a + b
-// }
-
-func main() {
+func RunServer() {
 	router := httprouter.New()
 	router.GET("/", IndexHandler)
 	logger, _ := zap.NewProduction()
-
-	handle.PrintName()
 
 	logger.Info("server started")
 	log.Fatal(http.ListenAndServe(":8080", router))

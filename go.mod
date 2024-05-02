@@ -1,20 +1,20 @@
-module mage-runner
+module variant-inc_dx-demo-go-api
 
-go 1.21
+go 1.22.2
 
 require (
 	github.com/julienschmidt/httprouter v1.3.0
+	github.com/stretchr/testify v1.9.0
 	go.uber.org/zap v1.27.0
-	gotest.tools v2.2.0+incompatible
 	rsc.io/quote v1.5.2
 	rsc.io/quote/v3 v3.1.0
 )
 
 require (
-	github.com/google/go-cmp v0.6.0 // indirect
-	github.com/pkg/errors v0.9.1 // indirect
-	github.com/stretchr/testify v1.8.4 // indirect
+	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/pmezard/go-difflib v1.0.0 // indirect
 	go.uber.org/multierr v1.10.0 // indirect
-	golang.org/x/text v0.13.0 // indirect
+	golang.org/x/text v0.0.0-20170915032832-14c0d48ead0c // indirect
+	gopkg.in/yaml.v3 v3.0.1 // indirect
 	rsc.io/sampler v1.3.0 // indirect
 )
