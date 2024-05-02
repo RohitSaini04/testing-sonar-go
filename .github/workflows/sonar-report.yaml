@@ -35,5 +35,5 @@ jobs:
           args: >
             -Dsonar.projectKey=variant-inc_dx-demo-go-api
             -Dsonar.go.coverage.reportPaths=coverage.out
-            -Dsonar.host.url=https://3.111.214.124:9000
+            -Dsonar.host.url=http://3.111.214.124:9000
 
