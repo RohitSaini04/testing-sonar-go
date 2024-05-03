@@ -12,4 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: RohitSaini04/github_action@main
+        env: 
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
