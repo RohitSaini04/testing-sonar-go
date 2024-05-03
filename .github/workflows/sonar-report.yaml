@@ -11,35 +11,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
-
-      - name: Install Application Go Packages
-        shell: bash
-        run: |
-          echo "::group::Install Go Packages"
-          go mod tidy
-          echo "::endgroup::"
-
-      - name: Test with go and collect coverage result
-        shell: bash
-        run: |
-          echo "::group::Test with go and collect coverage result"
-          go test ./... -coverprofile=coverage.out
-          echo "::endgroup::"
-      
-      - shell: bash
-        run: |
-          echo "::add-mask::variant-inc"
-          cat coverage.out
-
-      - name: SonarCloud Scan
-        uses: sonarsource/sonarcloud-github-action@master
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          args: >
-            -Dsonar.qualitygate.wait=false
-            -Dsonar.projectKey=variant-inc_dx-demo-go-api
-            -Dsonar.go.coverage.reportPaths=coverage.out
-            -Dsonar.organization=variant
+      - uses: RohitSaini04/github_action@main
 
