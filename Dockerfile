@@ -8,10 +8,10 @@ RUN go mod tidy
 # COPY . /.
 RUN go build -C app -o main
 
-FROM alpine:latest
+# FROM alpine:latest
 
-WORKDIR /root/
-COPY --from=build /src/app/main .
-EXPOSE 8080
+# WORKDIR /root/
+# COPY --from=build /src/app/main .
+# EXPOSE 8080
 
-CMD ["./main"]
+# CMD ["./main"]
