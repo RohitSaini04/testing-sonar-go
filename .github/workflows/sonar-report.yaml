@@ -11,7 +11,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: RohitSaini04/github_action@main
-        env: 
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      # - uses: RohitSaini04/github_action@main
+      #   env: 
+      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+        
+      - uses: docker/build-push-action@v5
+        name: Build Container Image
+        with:
+          context: .
+          push: false
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
