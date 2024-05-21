@@ -1,12 +1,13 @@
 FROM golang:1.22.2-alpine3.19 AS build
 
-# COPY go.sum go.mod /.
 WORKDIR /src/
-COPY . .
+COPY go.mod go.sum ./
+COPY app ./app
+
 RUN go mod tidy
 
 # COPY . /.
-RUN go build -C app -o main
+RUN go build -C ./app -o main
 
 # FROM alpine:latest
 
